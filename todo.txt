@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+if (tokenExits)
+    /api/user
+        if (response)
+            localStorage = token
+            signedIn = true
+        else
+            signedIn = false
+
+else
+    //

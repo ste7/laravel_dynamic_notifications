@@ -16,13 +16,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $notifiable = Notifiable::all();
-
-        foreach ($notifiable as $item) {
-            $item->model::creating(function () use($item) {
-                auth()->user()->notify(new DynamicNotifications(auth()->user(), $item->model, $item->message));
-            });
-        }
+//        $notifiable = Notifiable::all();
+//
+//        foreach ($notifiable as $item) {
+//            $item->model::creating(function () use($item) {
+//                auth()->user()->notify(new DynamicNotifications(auth()->user(), $item->model, $item->message));
+//            });
+//        }
 
         Schema::defaultStringLength(191);
     }

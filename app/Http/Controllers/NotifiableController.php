@@ -34,6 +34,10 @@ class NotifiableController extends Controller
         ], 200);
     }
 
+    public function destroy(Notifiable $notifiable){
+        $notifiable->delete();
+    }
+
     public function getModels() {
         $tables = DB::select('SHOW TABLES');
         $models = collect();

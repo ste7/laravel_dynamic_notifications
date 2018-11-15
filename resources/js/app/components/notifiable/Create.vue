@@ -29,6 +29,8 @@
 </template>
 
 <script>
+    import swal from 'sweetalert2'
+
     export default {
         data () {
             return {
@@ -50,6 +52,13 @@
             submit(){
                 let data = fillForm(this.fillable, this.notifiable)
                 axios.post(`api/notifiables`, data).then(response => {
+                    swal({
+                        position: 'center',
+                        type: 'success',
+                        title: 'Success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     this.error_messages = []
                     this.notifiable = response.data.notifiable
                 }).catch( e => {

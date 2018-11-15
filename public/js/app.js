@@ -66539,6 +66539,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_sweetalert2__);
 //
 //
 //
@@ -66569,6 +66571,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -66596,6 +66600,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var data = fillForm(this.fillable, this.notifiable);
             axios.post('api/notifiables', data).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default()({
+                    position: 'center',
+                    type: 'success',
+                    title: 'Success',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 _this2.error_messages = [];
                 _this2.notifiable = response.data.notifiable;
             }).catch(function (e) {
@@ -88354,6 +88365,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_sweetalert2__);
 //
 //
 //
@@ -88399,6 +88412,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -88429,6 +88444,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var data = fillForm(this.fillable, this.notifiable, 'PUT');
             axios.post('api/notifiables/' + this.notifiable.id, data).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default()({
+                    position: 'center',
+                    type: 'success',
+                    title: 'Success',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 _this2.error_messages = [];
                 _this2.notifiable = response.data.notifiable;
             }).catch(function (e) {

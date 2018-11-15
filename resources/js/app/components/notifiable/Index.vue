@@ -20,7 +20,7 @@
                         <template slot="items" slot-scope="props">
                             <td>{{ props.item.id }}</td>
                             <td class="text-xs-left">{{ props.item.model }}</td>
-                            <td class="text-xs-left">{{ props.item.created_at | ago }}</td>
+                            <td class="text-xs-left">{{ props.item.created_at }}</td>
 
 
                             <td class="text-xs-right">
@@ -39,7 +39,6 @@
             <v-fab-transition>
                 <v-btn :color="'primary'" dark fab fixed bottom right to="/notifiables/create">
                     <v-icon>playlist_add</v-icon>
-                    <v-icon>close</v-icon>
                 </v-btn>
             </v-fab-transition>
         </v-layout>
@@ -61,7 +60,6 @@
                     {text: 'CREATED AT',sortable: false,  value: 'created_at'},
                     {text: 'ACTION',sortable: false, align: 'right', value: 'action'},
                 ],
-                domain: domain,
             }
         },
         computed: {

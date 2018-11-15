@@ -11,13 +11,12 @@ class NotifiableController extends Controller
 {
     public function index() {
         return response([
-            'notifiables' => auth()->user()->notifiables()->get()
+            'notifiables' => Notifiable::all()
         ], 200);
     }
 
     public function store(CreateNotifiableRequest $request) {
         $notifiable = Notifiable::create($request->all());
-        auth()->user()->notifiables()->attach($notifiable->id);
         return response([
             'notifiable' => $notifiable
         ], 200);
@@ -40,7 +39,7 @@ class NotifiableController extends Controller
         $models = collect();
 
         foreach ($tables as $item) {
-            $separate = str_singular(str_replace('_', ' ', $item->Tables_in_mackars)); // Tables_in_'db_name'
+            $separate = str_singular(str_replace('_', ' ', $item->Tables_in_notydb)); // Tables_in_'db_name'
             $models->push('App\\' . str_replace(' ', '', ucwords($separate)));
         }
 

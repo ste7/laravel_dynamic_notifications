@@ -19,6 +19,16 @@
             ...mapGetters({
                 signedIn: 'signedIn'
             })
+        },
+
+        updated() {
+            Echo.channel('comments')
+                .notification((notification) => {
+                    // this.snackbar = true
+                    // this.notification = notification
+                    // this.notification = 'You have new notification!'
+                    console.log(notification)
+                });
         }
     }
 </script>

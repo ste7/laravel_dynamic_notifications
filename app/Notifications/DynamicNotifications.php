@@ -2,13 +2,17 @@
 
 namespace App\Notifications;
 
+use App\Comment;
 use App\User;
 use Illuminate\Broadcasting\Channel;
+use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\BroadcastMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Auth;
 
 class DynamicNotifications extends Notification implements ShouldQueue
 {

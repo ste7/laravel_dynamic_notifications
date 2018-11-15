@@ -18,6 +18,7 @@ class User extends Authenticatable
         'email',
         'password',
         'avatar',
+        'notification',
     ];
 
     protected $hidden = [
@@ -34,7 +35,7 @@ class User extends Authenticatable
     }
 
     public function notificationsOn() {
-        return true;
+        return $this->notification;
 //        return auth()->user()->profile()->first()->notification;
     }
 

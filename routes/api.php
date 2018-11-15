@@ -28,4 +28,7 @@ Route::middleware('auth:api')->group(function(){
 
     Route::get('notifiables/models', 'NotifiableController@getModels');
     Route::apiResource('notifiables', 'NotifiableController');
+
+    Route::post('articles', 'ArticleController@store');
+    Route::post('tags', 'TagController@store');
 });

@@ -49,7 +49,7 @@
                 fillable: ['username', 'password', 'client_id', 'client_secret', 'grant_type'],
                 data: {
                     client_id: 2,
-                    client_secret: 'gKKy0noNC4Pi5KPi1EbXeYo8g3zrbafP7ro619pB',
+                    client_secret: 'jZ7ppdRzQwXZCfvuXkJ9U0cr7WQSUbFo7cdVMAlA',
                     grant_type: 'password'
                 },
                 errors: []

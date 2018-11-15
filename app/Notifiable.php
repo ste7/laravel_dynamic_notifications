@@ -18,7 +18,7 @@ class Notifiable extends Model
      *
      * @var array
      */
-    protected $fillable = ['model', 'message', 'on'];
+    protected $fillable = ['model', 'message'];
 
     /**
      * method used to set is_visible attribute
@@ -27,9 +27,5 @@ class Notifiable extends Model
      */
     public function setOnAttribute($value){
         $this->attributes['on'] = ! empty($value)?: false;
-    }
-
-    public function users() {
-        return $this->belongsToMany(User::class);
     }
 }

@@ -44,7 +44,7 @@
             this.getModels()
         },
         methods: {
-            getModels() {
+            getModels() { 
                 axios.get('api/notifiables/models').then(response => {
                     this.models = response.data.models
                 })

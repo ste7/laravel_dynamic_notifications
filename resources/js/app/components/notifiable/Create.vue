@@ -61,6 +61,7 @@
                     })
                     this.error_messages = []
                     this.notifiable = response.data.notifiable
+                    this.$router.push('/notifiables')
                 }).catch( e => {
                     console.log(e.response.data)
                     this.error_messages = e.response.data.errors

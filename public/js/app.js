@@ -66630,6 +66630,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 });
                 _this2.error_messages = [];
                 _this2.notifiable = response.data.notifiable;
+                _this2.$router.push('/notifiables');
             }).catch(function (e) {
                 console.log(e.response.data);
                 _this2.error_messages = e.response.data.errors;

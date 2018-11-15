@@ -28,12 +28,6 @@
                                 required
                         ></v-text-field>
 
-                        <v-checkbox
-                                label="On"
-                                v-model="notifiable.on"
-                                color="primary"
-                        ></v-checkbox>
-
                         <v-btn @click.prevent="submit()" color="primary">submit</v-btn>
                     </form>
                 </v-card>

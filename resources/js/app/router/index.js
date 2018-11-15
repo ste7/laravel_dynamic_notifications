@@ -8,6 +8,7 @@ import Reset from '../components/auth/password/Reset.vue'
 import Home from './../../app/components/Home.vue'
 import Notifiable from './../../app/components/notifiable/Index.vue'
 import NotifiableCreate from './../../app/components/notifiable/Create.vue'
+import NotifiableEdit from './../../app/components/notifiable/Edit.vue'
 
 Vue.use(VueRouter)
 
@@ -65,6 +66,14 @@ const router = new VueRouter({
                 path: '/notifiables/create',
                 name: 'NotifiableCreate',
                 component: NotifiableCreate,
+                meta: {
+                    auth: true
+                }
+            },
+            {
+                path: '/notifiables/:id/edit',
+                name: 'NotifiableEdit',
+                component: NotifiableEdit,
                 meta: {
                     auth: true
                 }

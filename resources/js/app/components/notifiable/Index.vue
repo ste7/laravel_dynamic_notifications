@@ -80,7 +80,31 @@
                     console.log(e.response)
                     this.error = e.response.data.errors
                 })
-            }
+            },
+            destroy(row){
+                swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'Cancel',
+                }).then((result) => {
+                    if (result.value) {
+                        axios.delete('api/notifiables/' + row.id)
+                            .then(res => {
+                                this.getNotifiables()
+                                swal(
+                                    'Deleted!',
+                                    'Your file has been deleted.',
+                                    'success',
+                                )
+                            }).catch(e => {
+                                console.log(e)
+                            })
+                    }
+                });
+            },
         }
     }
 </script>

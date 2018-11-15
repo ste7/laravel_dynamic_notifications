@@ -63663,6 +63663,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 console.log(e.response);
                 _this.error = e.response.data.errors;
             });
+        },
+        destroy: function destroy(row) {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default()({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel'
+            }).then(function (result) {
+                if (result.value) {
+                    axios.delete('api/notifiables/' + row.id).then(function (res) {
+                        _this2.getNotifiables();
+                        __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default()('Deleted!', 'Your file has been deleted.', 'success');
+                    }).catch(function (e) {
+                        console.log(e);
+                    });
+                }
+            });
         }
     }
 });

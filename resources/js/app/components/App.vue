@@ -22,7 +22,7 @@
         },
 
         updated() {
-            Echo.channel('comments')
+            Echo.channel('created')
                 .notification((notification) => {
                     // this.snackbar = true
                     // this.notification = notification

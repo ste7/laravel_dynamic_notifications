@@ -75,7 +75,7 @@ class DynamicNotifications extends Notification implements ShouldQueue
     public function toDatabase($notifiable)
     {
         return [
-            'comment' => $this->table
+            'table' => $this->table
         ];
     }
 
@@ -83,7 +83,7 @@ class DynamicNotifications extends Notification implements ShouldQueue
     public function toBroadcast($notifiable)
     {
         return new BroadcastMessage([
-            'comment' => $this->table,
+            'table' => $this->table,
             'message' => $this->message
         ]);
     }
@@ -95,7 +95,7 @@ class DynamicNotifications extends Notification implements ShouldQueue
             return false;
         }
         return [
-            new Channel('comments')
+            new Channel('created')
         ];
     }
 }

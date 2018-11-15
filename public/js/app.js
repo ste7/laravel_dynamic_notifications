@@ -59292,7 +59292,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     })),
 
     updated: function updated() {
-        Echo.channel('comments').notification(function (notification) {
+        Echo.channel('created').notification(function (notification) {
             // this.snackbar = true
             // this.notification = notification
             // this.notification = 'You have new notification!'
